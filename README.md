@@ -9,10 +9,12 @@ Uçuş Yasağı Bölgeleri: Poligon tabanlı yasak bölge tanımları ve çakı�
 Gerçek Zamanlı Kısıtlar: Ağırlık, batarya, zaman penceresi kısıtları
 Görselleştirme: Matplotlib ile detaylı rota ve harita görselleştirmesi
 Performans Analizi: Kapsamlı metrik ve istatistik raporlama
+
 📋 Gereksinimler
 matplotlib>=3.5.0
 numpy>=1.21.0
 python>=3.8
+
 🚀 Kurulum
 Repoyu klonlayın:
 git clone https://github.com/kullanici/drone-delivery-optimization.git
@@ -21,6 +23,7 @@ Gerekli paketleri yükleyin:
 pip install matplotlib numpy
 Programı çalıştırın:
 python ucak.py
+
 🏗️ Sistem Mimarisi
 Ana Bileşenler
 1. Veri Modelleri
@@ -35,6 +38,7 @@ Kısıt Kontrolü: Fiziksel ve operasyonel kısıt doğrulama
 Geometrik hesaplamalar (mesafe, çakışma kontrolü)
 Poligon içi nokta kontrolü
 Çizgi-poligon kesişim tespiti
+
 🔧 Kullanım
 Temel Kullanım
 from ucak import *
@@ -84,6 +88,7 @@ yasak_bolge = UcusYasakBolgesi(
     koordinatlar=[(20, 20), (40, 20), (40, 40), (20, 40)],
     aktif_zaman=(datetime.time(0, 0), datetime.time(23, 59))
 )
+
 📊 Algoritma Detayları
 A* Yol Bulma Algoritması
 Zaman Karmaşıklığı: O(E log V)
@@ -103,11 +108,13 @@ Ağırlık Kısıtı: Toplam yük ≤ Drone kapasitesi
 Batarya Kısıtı: Enerji tüketimi ≤ Batarya kapasitesi
 Zaman Kısıtı: Teslimat zamanı ∈ Zaman penceresi
 Yasak Bölge Kısıtı: Rota ∩ Yasak bölge = ∅
+
 📈 Performans Metrikleri
 Teslimat Oranı: Tamamlanan teslimat yüzdesi
 Enerji Verimliliği: Ortalama enerji tüketimi
 Mesafe Optimizasyonu: Toplam uçuş mesafesi
 Çalışma Süresi: Algoritma hesaplama süresi
+
 🎯 Test Senaryoları
 Senaryo 1: Küçük Ölçek
 5 Drone
@@ -117,6 +124,7 @@ Senaryo 2: Orta Ölçek
 10 Drone
 50 Teslimat noktası
 5 Yasak bölge
+
 📊 Örnek Çıktı
 Nesil 1: En İyi Uygunluk = 1250.75
 Nesil 10: En İyi Uygunluk = 1456.32
@@ -136,12 +144,14 @@ Uçak 1: 3 teslimat, 156.78 metre, 32.12 enerji
 Uçak 2: 5 teslimat, 298.45 metre, 67.89 enerji
 Uçak 3: 3 teslimat, 145.67 metre, 29.34 enerji
 Uçak 4: 3 teslimat, 184.12 metre, 40.56 enerji
+
 🔬 Zaman Karmaşıklığı
 Algoritma	Karmaşıklık	Açıklama
 A*	O(E log V)	E: kenar, V: düğüm sayısı
 Genetik	O(G × P × D × A)	G: nesil, P: popülasyon, D: drone, A: A* çağrısı
 Kısıt Kontrolü	O(D × T)	D: drone, T: teslimat sayısı
 Toplam	O(G × P × D × T × E log V)	Genel sistem karmaşıklığı
+
 🛠️ Geliştirme
 Kod Yapısı
 ucak.py
